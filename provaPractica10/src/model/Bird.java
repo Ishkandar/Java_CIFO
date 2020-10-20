@@ -14,6 +14,25 @@ public class Bird {
 	}
 	
 	// public methods
+	
+	/**************GETTERS***************/
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getLatinName() {
+		return this.latinName;
+	}
+	
+	public int gtObservations() {
+		return this.obsCounter;
+	}
+	/*************************************/
+	
+	public void Observed() {
+		this.obsCounter++;
+	}
+	
 	@Override
 	public boolean equals(Object compared) {
 		if (this == compared) {
