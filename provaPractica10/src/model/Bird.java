@@ -1,4 +1,4 @@
-package provaPractica10;
+package model;
 
 public class Bird {
 	// class attributes
@@ -14,8 +14,28 @@ public class Bird {
 	}
 	
 	// public methods
+	@Override
+	public boolean equals(Object compared) {
+		if (this == compared) {
+			return true;
+		}
+		
+		if (!(compared instanceof Bird)) {
+			return false;
+		}
+		
+		Bird comparedBird = (Bird) compared;
+		
+		if (this.name.equals(comparedBird.name) &&
+				this.latinName.equals(comparedBird.latinName)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	@Override
 	public String toString() {
 		return this.name + " (" + this.latinName + "): " + obsCounter + " observations.";
 	}
-
 }
