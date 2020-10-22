@@ -18,7 +18,6 @@ public class StringUtilities {
 				command.equals("quit")) {
 			return true;
 		}
-		System.out.println("Command not found, try again.");
 		return false;
 	}
 }

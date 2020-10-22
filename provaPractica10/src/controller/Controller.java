@@ -25,7 +25,7 @@ public class Controller {
 	}
 	
 	public void Show(String name) {
-		Bird birdToShow = birdCollection.getBird(name);
+		Bird birdToShow = this.birdCollection.getBird(name);
 		System.out.println(birdToShow);
 	}
 	

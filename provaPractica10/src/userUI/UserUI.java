@@ -7,24 +7,30 @@ public class UserUI {
 	// private class fields:
 	private Scanner scan;
 	private Controller controller;
+	private ErrorMessages errMsgs;
 	
 	// public custom constructor:
 	public UserUI() {
 		this.scan = new Scanner(System.in);
 		this.controller = new Controller();
+		this.errMsgs = new ErrorMessages();
 	}
 	
 	// it starts a user input stream, the commands entered
 	// are formatted first and then checked for validity,
 	// then each option is managed:
 	public void UserAppDialog() {
-		while (true) {
+		boolean switchedOn = true;
+		while (switchedOn) {
 			System.out.println("Command: (type \"commands\" for help).\n"
 					+ "--------------------------------------------\n");
 			String command = StringUtilities.formatUserInput(scan.nextLine());
 			
 			if (StringUtilities.commandAccepted(command)) {
 				switch (command) {
+					case "":
+						this.errMsgs.getErrorMessage(4);
+						break;
 				
 					case "add":
 						System.out.print("Name: ");
@@ -66,6 +72,7 @@ public class UserUI {
 					case "quit":
 						System.out.println();
 						System.out.println("Thank you, good bye!");
+						switchedOn = false;
 						this.controller.Quit();
 						break;
 						

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class BirdCollection {
 	private final ArrayList<Bird> birds;
 	private ErrorMessages errMsgs;
-	private Bird bird;
 	
 	// public custom constructor
 	public BirdCollection() {
@@ -15,11 +14,10 @@ public class BirdCollection {
 	}
 	
 	public void add(String name, String latinName) {
-		bird = new Bird(name, latinName);
+		Bird bird = new Bird(name, latinName);
 		
 		if (this.birds.contains(bird)) {
 			errMsgs.getErrorMessage(1);
-			return;
 		} else {
 			this.birds.add(bird);
 		}
@@ -49,14 +47,14 @@ public class BirdCollection {
 			errMsgs.getErrorMessage(2);
 		}
 		
-		for (Bird bird : birds) {
-			System.out.println(bird);
+		for (Bird oneBird : birds) {
+			System.out.println(oneBird);
 		}
 	}
 	
 	public void printCollection() {
-		for (Bird bird : birds) {
-			System.out.println(bird);
+		for (Bird oneBird : birds) {
+			System.out.println(oneBird);
 		}
 	}
 }
