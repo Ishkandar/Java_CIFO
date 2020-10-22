@@ -13,7 +13,12 @@ public class BirdCollection {
 	
 	public void add(String name, String latinName) {
 		bird = new Bird(name, latinName);
-		this.birds.add(bird);
+		if (this.birds.contains(bird)) {
+			System.out.println("Bird not added as it's already listed.");
+			return;
+		} else {
+			this.birds.add(bird);
+		}
 	}
 	
 	public ArrayList<Bird> getBirds() {

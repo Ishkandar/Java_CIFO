@@ -30,14 +30,38 @@ public class Bird {
 	public String getLatinName() {
 		return this.latinName;
 	}
+	
+	public int getHowManyObs() {
+		return this.howManyObs;
+	}
 	/****************************************/
 	
 	public void observe() {
 		this.howManyObs++;
 	}
 	
-	public int getHowManyObs() {
-		return this.howManyObs;
+	@Override
+	public boolean equals(Object compared) {
+		if (compared == null) {
+			return false;
+		}
+		
+		if(!(compared instanceof Bird)) {
+			return false;
+		}
+		
+		if (this == compared) {
+			return true;
+		}
+		
+		Bird comparedBird = (Bird) compared;
+		
+		if (this.getName().equals(comparedBird.getName()) && 
+				this.getLatinName().equals(comparedBird.getLatinName())) {
+			return true;
+		}
+		
+		return false;
 	}
 	
 	@Override

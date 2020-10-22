@@ -1,18 +1,20 @@
 package userUI;
 
 public class StringUtilities {
-	private String userInput;
-	
-	public StringUtilities() {
-		this.userInput = null;
+	public static String formatUserInput(String userInput) {
+		userInput = userInput.trim().toLowerCase();
+		return userInput;
 	}
 	
-	public String formatUserInput(String userInput) {
-		this.userInput = userInput.trim().toLowerCase();
-		return this.userInput;
-	}
-	
-	public boolean commandAccepted(String command) {
-		return true;
+	public static boolean commandAccepted(String command) {
+		if (command.equals("add") || 
+				command.equals("observation") || 
+				command.equals("statistics") || 
+				command.equals("show") || 
+				command.equals("quit")) {
+			return true;
+		}
+		System.out.println("Command not found, try again.");
+		return false;
 	}
 }

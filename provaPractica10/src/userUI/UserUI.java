@@ -16,9 +16,10 @@ public class UserUI {
 	public void UserAppDialog() {
 		while (true) {
 			System.out.print("? ");
-			String command = scan.nextLine();
-
-			switch (command) {
+			String command = StringUtilities.formatUserInput(scan.nextLine());
+			
+			if (StringUtilities.commandAccepted(command)) {
+				switch (command) {
 				case "add":
 					System.out.print("Name: ");
 					String name = scan.nextLine();
@@ -44,8 +45,8 @@ public class UserUI {
 					this.controller.Quit();
 					break;
 				default:
-					System.out.println("Command not found, try again.");
 					break;
+				}
 			}
 		}
 	}
