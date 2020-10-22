@@ -5,7 +5,7 @@ public class Controller {
 	// class attributes
 	private BirdCollection birdCollection;
 	
-	// constructor
+	// public custom constructor
 	public Controller() {
 		this.birdCollection = new BirdCollection();
 	}

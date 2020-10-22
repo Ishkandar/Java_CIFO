@@ -4,15 +4,19 @@ import controller.*;
 import java.util.Scanner;
 
 public class UserUI {
-	// the user can: add, observation, statistics, show, quit
+	// private class fields:
 	private Scanner scan;
 	private Controller controller;
 	
+	// public custom constructor:
 	public UserUI() {
 		this.scan = new Scanner(System.in);
 		this.controller = new Controller();
 	}
 	
+	// it starts a user input stream, the commands entered
+	// are formatted first and then checked for validity,
+	// then each option is managed:
 	public void UserAppDialog() {
 		while (true) {
 			System.out.println("Command: (type \"commands\" for help).\n"
