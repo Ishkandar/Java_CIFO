@@ -11,6 +11,7 @@ public class StringUtilities {
 				command.equals("observation") || 
 				command.equals("statistics") || 
 				command.equals("show") || 
+				command.equals("commands") ||
 				command.equals("quit")) {
 			return true;
 		}
