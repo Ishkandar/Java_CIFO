@@ -20,32 +20,38 @@ public class UserUI {
 			
 			if (StringUtilities.commandAccepted(command)) {
 				switch (command) {
-				case "add":
-					System.out.print("Name: ");
-					String name = scan.nextLine();
-					System.out.print("Latin Name: ");
-					String latinName = scan.nextLine();
-					this.controller.add(name, latinName);
-					break;
-				case "observation":
-					System.out.print("What was observed? ");
-					String birdObserved = scan.nextLine();
-					this.controller.Observation(birdObserved);
-					break;
-				case "statistics":
-					this.controller.Statistics();
-					break;
-				case "show":
-					System.out.print("What? ");
-					String whatBird = scan.nextLine();
-					this.controller.Show(whatBird);
-					break;
-				case "quit":
-					System.out.println("Thank you, good bye!");
-					this.controller.Quit();
-					break;
-				default:
-					break;
+				
+					case "add":
+						System.out.print("Name: ");
+						String name = scan.nextLine();
+						System.out.print("Latin Name: ");
+						String latinName = scan.nextLine();
+						this.controller.add(name, latinName);
+						break;
+						
+					case "observation":
+						System.out.print("What was observed? ");
+						String birdObserved = scan.nextLine();
+						this.controller.Observation(birdObserved);
+						break;
+						
+					case "statistics":
+						this.controller.Statistics();
+						break;
+						
+					case "show":
+						System.out.print("What? ");
+						String whatBird = scan.nextLine();
+						this.controller.Show(whatBird);
+						break;
+						
+					case "quit":
+						System.out.println("Thank you, good bye!");
+						this.controller.Quit();
+						break;
+						
+					default:
+						break;
 				}
 			}
 		}
