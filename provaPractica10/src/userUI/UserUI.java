@@ -21,10 +21,10 @@ public class UserUI {
 		while (true) {
 			System.out.println("Command: (type \"commands\" for help).\n"
 					+ "--------------------------------------------\n");
-			String command = StringUtilities.formatUserInput(scan.nextLine());
 			
-			if (StringUtilities.commandAccepted(command)) {
-				switch (command) {
+			String command = scan.nextLine();
+				
+			switch (command) {
 				
 					case "add":
 						System.out.print("Name: ");
@@ -71,7 +71,6 @@ public class UserUI {
 						
 					default:
 						break;
-				}
 			}
 		}
 	}
