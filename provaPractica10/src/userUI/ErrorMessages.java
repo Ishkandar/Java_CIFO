@@ -7,6 +7,7 @@ public class ErrorMessages {
 	
 	public ErrorMessages() {
 		this.errorDict = new HashMap<>();
+		errorDict = new HashMap<Integer, String>();
 		this.setErrorMessages();
 	}
 	
@@ -16,6 +17,7 @@ public class ErrorMessages {
 		this.errorDict.put(2, "The list is empty.\n");
 		this.errorDict.put(3, "Command not found.\n");
 		this.errorDict.put(4, "Please do not enter an empty line.\n");
+		this.errorDict.put(4, "Please, enter the name of the bird.\n");
 	}
 	
 	public void getErrorMessage(int errCode) {
