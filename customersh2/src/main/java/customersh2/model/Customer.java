@@ -1,9 +1,16 @@
-package customersh2;
+package customersh2.model;
+
+import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+
 
 @Entity
 public class Customer {
@@ -12,6 +19,8 @@ public class Customer {
 	private Long id;
 	private String firstName;
 	private String lastName;
+	@OneToMany(mappedBy="customer", cascade=CascadeType.ALL)
+	private List<CreditCard> creditCards = new ArrayList<>();
 	
 	protected Customer() {}
 	
@@ -20,16 +29,20 @@ public class Customer {
 		this.lastName = lastName;
 	}
 	
-	public Long getId() {
-		return this.id;
-	}
-	
 	public String getFirstName() {
 		return this.firstName;
 	}
 	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
 	public String getLastName() {
 		return this.lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	@Override
