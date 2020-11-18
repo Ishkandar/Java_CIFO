@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
@@ -20,7 +19,7 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	@OneToMany(mappedBy="customer", cascade=CascadeType.ALL)
-	private List<CreditCard> creditCards = new ArrayList<>();
+	private List<CreditCard> creditCards = new ArrayList<CreditCard>();
 	
 	protected Customer() {}
 	
