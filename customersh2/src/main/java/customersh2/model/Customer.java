@@ -13,9 +13,11 @@ import javax.persistence.CascadeType;
 
 @Entity
 public class Customer {
+	// ------------ ID COLUMN ---------------- //
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	// --------------- END ID --------------- //
 	private String firstName;
 	private String lastName;
 	@OneToMany(mappedBy="customer", cascade=CascadeType.ALL)
